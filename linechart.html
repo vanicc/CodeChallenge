@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Line Chart</title>
+</head>
+<body>
+<script src="D:\HighCharts\code\highcharts.js" type="text/javascript"></script>
+<div id="displaychart"></div>
+
+<script type="text/javascript">
+
+Highcharts.chart('displaychart', {
+
+    title: {
+        text: 'Sales 2019'
+    },
+    yAxis: {
+        title: {
+            text: 'Sales'
+        }
+    },
+    xAxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+
+    series: [{
+        name: 'Store 1',
+        data: [39123, 43487, 75345, 69000, 81111, 85000]
+    }, {
+        name: 'Store 2',
+        data: [32405, 32490 , 44064, 49742, 55000, 56986 ]
+    }, {
+        name: 'Store 3',
+        data: [30123, 35555, 40300, 56765, 64504, 67234]
+    }, {
+        name: 'Store 4',
+        data: [null, null, 32490, 42300, 49000, 55837]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 200
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+</script>
+
+</body>
+</html>
